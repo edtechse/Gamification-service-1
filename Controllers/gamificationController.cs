@@ -114,7 +114,8 @@ namespace GamificationService.Controllers
             }
             return Ok("Trophy and badge have been checked and updated accordingly.");
         }
-
+        
+        [NonAction]
         public int CheckBadgeIdUpdate(int trophyCount)
         {
             int level = 1;
@@ -124,7 +125,8 @@ namespace GamificationService.Controllers
                 level = 3;
             return level;
         }
-
+        
+        [NonAction]
         public StringContent GetStringContent(object obj)
         {
             var jsonContent = JsonConvert.SerializeObject(obj);
@@ -134,6 +136,7 @@ namespace GamificationService.Controllers
             return contentString;
         }
 
+        [NonAction]
         public StringBuilder RemoveLast(StringBuilder sb, string value)
         {
             if (sb.Length < 1) return sb;
